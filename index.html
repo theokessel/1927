@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Piano</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style type="text/css">
+    #piano {
+        width: 1524px;
+        height: 400px;
+        border-style: solid;
+        border-color: black;
+    }
+
+    .whiteKey {
+        position: absolute;
+        width: 80px;
+        height: 400px;
+        border-style: solid;
+        border-color: black;
+    }
+
+    .blackKey {
+        position: absolute;
+        width: 50px;
+        height: 260px;
+        border-style: solid;
+        border-color: black;
+        background-color: black;
+    }
+
+    #c-61 {
+        left: 65px;
+    }
+
+    #d-63 {
+        left: 145px;
+    }
+
+    #f-66 {
+        left: 305px;
+    }
+
+    #g-68 {
+        left: 385px;
+    }
+
+    #a-70 {
+        left: 465px;
+    }
+
+    #c-73 {
+        background-color: black;
+        left: 625px;
+    }
+
+    #d-75 {
+        background-color: black;
+        left: 705px;
+    }
+
+    #f-78 {
+        background-color: black;
+        left: 865px;
+    }
+
+    #g-80 {
+        background-color: black;
+        left: 945px;
+    }
+
+    #a-82 {
+        background-color: black;
+        left: 1025px;
+    }
+
+
+
+    /*white keys*/
+    #d-62 {
+        left: 90px;
+    }
+
+    #e-64 {
+        left: 170px;
+    }
+
+    #f-65 {
+        left: 250px;
+    }
+
+    #g-67 {
+        left: 330px;
+    }
+
+    #a-69 {
+        left: 410px;
+    }
+
+    #b-71 {
+        left: 490px;
+    }
+
+    #c-72 {
+        left: 570px;
+    }
+
+    #d-74 {
+        left: 650px;
+    }
+
+    #e-76 {
+        left: 730px;
+    }
+
+    #f-77 {
+        left: 810px;
+    }
+
+    #g-79 {
+        left: 890px;
+    }
+
+    #a-81 {
+        left: 970px;
+    }
+
+    #b-83 {
+        left: 1050px;
+    }
+
+    #c-84 {
+        left: 1130px;
+    }
+
+    #d-86 {
+        left: 1210px;
+    }
+
+    #e-88 {
+        left: 1290px;
+    }
+
+    #f-89 {
+        left: 1370px;
+    }
+
+    #g-91 {
+        left: 1450px;
+    }
+
+    /*#g3{
+			left: 890px;
+		}*/
+    </style>
+</head>
+
+<body>
+    <!-- <div id="piano">
+ -->        <!-- white keys -->
+        <div id="c-60" class="whiteKey" onmousedown="play(this.id)" onmouseup="stop(this.id)"></div>
+        <div id="d-62" class="whiteKey" onmousedown="play(this.id)" onmouseup="stop(this.id)"></div>
+        <div id="e-64" class="whiteKey" onmousedown="play(this.id)" onmouseup="stop(this.id)"></div>
+        <div id="f-65" class="whiteKey" onmousedown="play(this.id)" onmouseup="stop(this.id)"></div>
+        <div id="g-67" class="whiteKey" onmousedown="play(this.id)" onmouseup="stop(this.id)"></div>
+        <div id="a-69" class="whiteKey" onmousedown="play(this.id)" onmouseup="stop(this.id)"></div>
+        <div id="b-71" class="whiteKey" onmousedown="play(this.id)" onmouseup="stop(this.id)"></div>
+        <div id="c-72" class="whiteKey" onmousedown="play(this.id)" onmouseup="stop(this.id)"></div>
+        <div id="d-74" class="whiteKey" onmousedown="play(this.id)" onmouseup="stop(this.id)"></div>
+        <div id="e-76" class="whiteKey" onmousedown="play(this.id)" onmouseup="stop(this.id)"></div>
+        <div id="f-77" class="whiteKey" onmousedown="play(this.id)" onmouseup="stop(this.id)"></div>
+        <div id="g-79" class="whiteKey" onmousedown="play(this.id)" onmouseup="stop(this.id)"></div>
+        <div id="a-81" class="whiteKey" onmousedown="play(this.id)" onmouseup="stop(this.id)"></div>
+        <div id="b-83" class="whiteKey" onmousedown="play(this.id)" onmouseup="stop(this.id)"></div><!-- 
+        <div id="c-84" class="whiteKey" onmousedown="play(this.id)" onmouseup="stop(this.id)"></div>
+        <div id="d-86" class="whiteKey" onmousedown="play(this.id)" onmouseup="stop(this.id)"></div>
+        <div id="e-88" class="whiteKey" onmousedown="play(this.id)" onmouseup="stop(this.id)"></div>
+        <div id="f-89" class="whiteKey" onmousedown="play(this.id)" onmouseup="stop(this.id)"></div>
+        <div id="g-91" class="whiteKey" onmousedown="play(this.id)" onmouseup="stop(this.id)"></div> -->
+        <div id="c-61" class="blackKey" onmousedown="play(this.id)" onmouseup="stopBlack(this.id)"></div>
+        <div id="d-63" class="blackKey" onmousedown="play(this.id)" onmouseup="stopBlack(this.id)"></div>
+        <div id="f-66" class="blackKey" onmousedown="play(this.id)" onmouseup="stopBlack(this.id)"></div>
+        <div id="g-68" class="blackKey" onmousedown="play(this.id)" onmouseup="stopBlack(this.id)"></div>
+        <div id="a-70" class="blackKey" onmousedown="play(this.id)" onmouseup="stopBlack(this.id)"></div>
+        <div id="c-73" class="blackKey" onmousedown="play(this.id)" onmouseup="stopBlack(this.id)"></div>
+        <div id="d-75" class="blackKey" onmousedown="play(this.id)" onmouseup="stopBlack(this.id)"></div>
+        <div id="f-78" class="blackKey" onmousedown="play(this.id)" onmouseup="stopBlack(this.id)"></div>
+        <div id="g-80" class="blackKey" onmousedown="play(this.id)" onmouseup="stopBlack(this.id)"></div>
+        <div id="a-82" class="blackKey" onmousedown="play(this.id)" onmouseup="stopBlack(this.id)"></div>
+    <!-- </div> -->
+    <script type="text/javascript">
+    function play(clicked) {
+    	noteNumber = clicked.split("-")
+    	noteNumber = noteNumber[1]
+        console.log(noteNumber)
+        $("#"+clicked).css("background", "green")
+        fetch("https://bot5.seattleacademy.software/sing?song=["+noteNumber+",20]")
+    }
+
+    function stop(clicked) {
+    	$("#"+clicked).css("background", "white")
+    }
+
+    function stopBlack(clicked) {
+    	$("#"+clicked).css("background", "black")
+    }
+
+
+
+
+
+
+
+
+    //color changing//
+    //     document.getElementById(clicked).addEventListener("mousedown", mousedown);
+    //     document.getElementById(clicked).addEventListener("mouseup", mouseup);
+    //     //Also clear the interval when user leaves the window with mouse
+    //     document.getElementById(clicked).addEventListener("mouseout", mouseup);
+
+    //     fetch("https://bot5.seattleacademy.software/sing?song=["+noteNumber+",20]")
+    //     console.log(noteNumber)
+
+
+    //     var mousedownID = -1; //Global ID of mouse down interval
+    //     function mousedown(event) {
+    //         if (mousedownID == -1) //Prevent multimple loops!
+    //             mousedownID = setInterval(whilemousedown, 0.001 /*execute every 100ms*/ );
+    //         console.log("mousedown")
+    //     }
+
+    //     function mouseup(event) {
+    //         if (mousedownID != -1) { //Only stop if exists
+    //             clearInterval(mousedownID);
+    //             mousedownID = -1;
+    //             $("#"+clicked).css("background", "white")
+
+    //             //fetch("https://bot5.seattleacademy.software/sing?song=[0,0]")
+    //         }
+
+    //     }
+
+    //     function whilemousedown() {
+    //         $("#"+clicked).css("background", "green")
+    //     }
+    // }
+
+    // function playBlack(clicked) {
+    // 	noteNumber = clicked.split("-")
+    // 	noteNumber = noteNumber[1]
+    //     console.log(noteNumber)
+    //     //color changing//
+    //     document.getElementById(clicked).addEventListener("mousedown", mousedown);
+    //     document.getElementById(clicked).addEventListener("mouseup", mouseup);
+    //     //Also clear the interval when user leaves the window with mouse
+    //     document.getElementById(clicked).addEventListener("mouseout", mouseup);
+
+    //     fetch("https://bot5.seattleacademy.software/sing?song=["+noteNumber+",10]")
+    //     console.log(noteNumber)
+
+
+    //     var mousedownID = -1; //Global ID of mouse down interval
+    //     function mousedown(event) {
+    //         if (mousedownID == -1) //Prevent multimple loops!
+    //             mousedownID = setInterval(whilemousedown, 0.001 /*execute every 100ms*/ );
+    //         console.log("mousedown")
+    //     }
+
+    //     function mouseup(event) {
+    //         if (mousedownID != -1) { //Only stop if exists
+    //             clearInterval(mousedownID);
+    //             mousedownID = -1;
+    //             $("#"+clicked).css("background", "black")
+
+    //             //fetch("https://bot5.seattleacademy.software/sing?song=[0,0]")
+    //         }
+
+    //     }
+
+    //     function whilemousedown() {
+    //         $("#"+clicked).css("background", "green")
+    //     }
+    </script>
+</body>
+
+</html>
